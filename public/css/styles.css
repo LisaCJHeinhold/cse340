@@ -1,5 +1,8 @@
 /******* Change Box Model ***************/
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+:root {
+  --accent: rgb(179, 63, 63);
+}
 *,
 *:before,
 *:after {
@@ -41,7 +44,10 @@ nav ul {
 }
 nav ul li {
   margin: 0;
-  padding: 15px 0;
+  padding: 15px 10px;
+}
+nav ul li:hover {
+  background-color: var(--accent);
 }
 .home-title {
   font-size: 1.5rem;
@@ -55,7 +61,7 @@ nav ul li {
   margin: 0 auto;
 }
 .box {
-  color: rgb(0, 189, 227);
+  color: var(--accent);
   background-color: rgba(255, 255, 255, 0.8);
   padding: 0;
   width: 150px;
@@ -75,9 +81,10 @@ nav ul li {
   font-size: .9rem;
 }
 button {
-  background-color: rgb(0, 189, 227);
-  border: 1px solid gray;
-  font-weight: 500;
+  background-color: var(--accent);
+  border: 1px solid grey;
+  color: white;
+  font-weight: 700;
   padding: 8px;
 }
 .reviews li {
@@ -87,8 +94,11 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+.upgrade-box p a {
+  color: white;
+}
 .upgrade1, .upgrade2, .upgrade3, .upgrade4 {
-  background-color: rgba(0, 189, 227, 0.2);
+  background-color: rgba(179, 63, 63, 0.8);
   padding: 10px 20px;
   margin: 0 10px 20px 10px;
   border-radius: 15px;
@@ -107,7 +117,7 @@ footer {
   }
   #wrapper {
     background-color: white;
-    border: 5px solid rgb(0, 189, 227);
+    border: 5px solid var(--accent);
     border-radius: 10px;
     width: 80%;
     margin: 10px auto;
