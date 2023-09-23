@@ -1,6 +1,167 @@
 /******* Change Box Model ***************/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.siteName {
+  padding: 0 10px;
+  margin: 10px 0;
+}
+.siteName a {
+  font-size: 2rem;
+  color: black;
+}
+a {
+  text-decoration: none;
+}
+#tools {
+  padding: 0 10px;
+  margin: 10px 0;
+}
+#tools a {
+  color: black;
+}
+nav {
+  color: white;
+  background-color: rgb(41, 41, 41);
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+}
+nav ul li {
+  margin: 0;
+  padding: 15px 0;
+}
+.home-title {
+  font-size: 1.5rem;
+}
+.subtitle {
+  font-size: 1.3rem;
+}
+.hero-img {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.box {
+  color: rgb(0, 189, 227);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0;
+  width: 150px;
+  margin: 10px;
+  position: relative;
+  top: 170px;
+  left: 30px;
+  z-index: 999;
+}
+.box-title {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+.facts {
+  padding: 0;
+  margin: 0;
+  font-size: .9rem;
+}
+button {
+  background-color: rgb(0, 189, 227);
+  border: 1px solid gray;
+  font-weight: 500;
+  padding: 8px;
+}
+.reviews li {
+  margin: 15px 0;
+}
+.upgrade-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.upgrade1, .upgrade2, .upgrade3, .upgrade4 {
+  background-color: rgba(0, 189, 227, 0.2);
+  padding: 10px 20px;
+  margin: 0 10px 20px 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.upgrade-box img {
+  width: 30%;
+}
+footer {
+  margin: 0 10px;
+}
+@media  screen and (min-width: 750px) {
+  body {
+    background-image: url(../images/site/checkerboard.jpg);
+    background-size: 50%;
+  }
+  #wrapper {
+    background-color: white;
+    border: 5px solid rgb(0, 189, 227);
+    border-radius: 10px;
+    width: 80%;
+    margin: 10px auto;
+  }
+  .siteName {
+    padding: 10px;
+  }
+  #tools a {
+    margin: 10px;
+  }
+  nav {
+    margin: 0 10px;
+  }
+  .rev-up {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .up-contain {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 10px;
+  }
+  .rev-contain {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 10px;
+  }
+  .reviews li{
+    margin: 20px 0px;
+  }
+}
+@media screen and (min-width: 1100px){
+  #wrapper {
+    width: 70%;
+  }
+  .home-title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1.8rem;
+  }
+  .box {
+    width: 250px;
+  }
+  .box-title {
+    font-size: 1.8rem;
+  }
+  .facts {
+    font-size: 1.2rem;
+  }
+  button {
+    padding: 12px;
+  }
+  .reviews li{
+    margin: 30px 0px;
+  }
 }
