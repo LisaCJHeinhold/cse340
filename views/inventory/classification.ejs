@@ -1,0 +1,11 @@
+<!-- add title: if title variable exists create h1 title, else redirects response obj to defualt index route (home view) -->
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<%# messages() %>
+
+<!-- call the grid variable that contains our html -->
+<%- grid %>
