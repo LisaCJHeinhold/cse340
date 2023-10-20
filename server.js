@@ -47,7 +47,7 @@ app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav();
   console.error(`Error at: "${req.originalUrl}": ${err.message}`);
   let message;
-  if (err.status == 404) {
+  if (err.status == 500) {
     message = err.message;
   } else {
     message = 'Oh no! There was a crash.';
