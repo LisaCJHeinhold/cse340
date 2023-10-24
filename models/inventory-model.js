@@ -26,11 +26,11 @@ async function getInventoryByClassificationId(classification_id) {
   }
 
 /* ***************************
- *  Get all classification data
+ *  Get all Inv data
  * ************************** */
-async function getInventoryItem(){
-  return await pool.query("SELECT * FROM public.inventory ORDER BY inv_make")
-}
+// async function getInventoryItem(){
+//   return await pool.query("SELECT * FROM public.inventory ORDER BY inv_make")
+// }
 
 /* ***************************
  *  Get details for a specific inventory item by inventory_id
@@ -41,11 +41,13 @@ async function getInventoryItemDetail(inventory_id) {
       `SELECT * FROM public.inventory WHERE inv_id = $1`,
       [inventory_id]
     );
-    return data.rows[0]; // Assuming inv_id is unique, so only one row should be returned
+    return data.rows[0];
   } catch (error) {
     console.error("getInventoryItemDetail error " + error);
     throw error;
   }
 }
 
-module.exports = {getClassifications, getInventoryByClassificationId, getInventoryItem, getInventoryItemDetail}
+module.exports = {getClassifications, getInventoryByClassificationId, getInventoryItemDetail}
+
+//  getInventoryItem,
