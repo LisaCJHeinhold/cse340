@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 :root {
   --accent: rgb(179, 63, 63);
+  --light-accent: rgb(207, 138, 138);
 }
 *,
 *:before,
@@ -163,6 +164,106 @@ button {
 }
 
 /* ***************end item **************** */
+/* ***************Messages***************** */
+.notice {
+  color: red;
+  font-style: italic;
+  font-weight: 800;
+  list-style: none;
+}
+/* ***************end messages************* */
+/* ***************Login****************** */
+.login-form {
+  background-color: var(--accent);
+  padding: 20px;
+  border: 5px solid var(--light-accent);
+  border-radius: 15px;
+  margin: auto;
+  max-width: 70%;
+}
+.login-form label {
+  display: block;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 600;
+}
+.login-form input {
+  margin: 5px 0;
+  padding: 5px;
+  border: 2px solid var(--light-accent);
+  border-radius: 5px;
+  width: 100%;
+}
+.login-form div p {
+  color: white;
+  font-style: italic;
+  font-size: .7rem;
+  margin: 0 0 5px 0 ;
+  text-align: left;
+}
+.login-form button {
+  display: block;
+  box-sizing: border-box;
+  background-color: white;
+  color: var(--accent);
+  border: 2px solid var(--light-accent);
+  border-radius: 50px;
+  margin: 5px auto;
+  padding: 5px 15px;
+}
+.login-form p {
+  color: white;
+  text-align: center;
+}
+.login-form a {
+  color: white;
+  text-decoration: underline;
+}
+/* ***********end login******************* */
+/* ************register****************** */
+.register-form {
+  background-color: var(--accent);
+  padding: 20px;
+  border: 5px solid var(--light-accent);
+  border-radius: 15px;
+  margin: auto;
+  max-width: 70%;
+}
+.register-form label {
+  display: block;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 600;
+}
+.register-form input {
+  margin: 5px 0;
+  padding: 5px;
+  border: 2px solid var(--light-accent);
+  border-radius: 5px;
+  width: 100%;
+}
+.register-form button {
+  display: block;
+  box-sizing: border-box;
+  background-color: white;
+  color: var(--accent);
+  border: 2px solid var(--light-accent);
+  border-radius: 50px;
+  margin: 5px auto;
+  padding: 5px 15px;
+}
+.register-form div p {
+  color: white;
+  font-style: italic;
+  font-size: .7rem;
+  margin: 0 0 5px 0 ;
+}
+#pswdBtn {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* ***********end register*************** */
 
 footer {
   margin: 0 10px;
