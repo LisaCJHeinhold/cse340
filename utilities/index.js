@@ -86,6 +86,7 @@ Util.buildInventoryItemHTML = function (itemDetail) {
 };
 
 
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

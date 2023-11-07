@@ -166,10 +166,14 @@ button {
 /* ***************end item **************** */
 /* ***************Messages***************** */
 .notice {
-  color: red;
+  color: black;
+  background-color: lightgreen;
   font-style: italic;
   font-weight: 800;
   list-style: none;
+  padding: 20px;
+  width: 95%;
+  margin: 10px auto;
 }
 /* ***************end messages************* */
 /* ***************Login****************** */
@@ -257,6 +261,9 @@ button {
   font-style: italic;
   font-size: .7rem;
   margin: 0 0 5px 0 ;
+}
+.register-form p {
+  color: white;
 }
 #pswdBtn {
   color: white;

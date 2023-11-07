@@ -14,6 +14,7 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities')
 const errorRoute = require('./routes/errorRoute');
+const managementRoute = require('./routes/managementRoute');
 const session = require("express-session");
 const pool = require('./database');
 const accountRoute = require("./routes/accountRoute")
