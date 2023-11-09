@@ -71,12 +71,16 @@ validate.newInventoryRules = () => {
         body("inv_image")
         .trim()
         .isLength({ min: 1 })
-        .withMessage("Please provide the vehicle image."),
+        .withMessage("Please provide the vehicle image.")
+        .custom(invModel.isImage())
+        .withMessage("Please provide a valid Image (ending in: .jpg, .jpeg, .png, or .webp"),
 
         body("inv_thumbnail")
         .trim()
         .isLength({ min: 1 })
-        .withMessage("Please provide the vehicle thumbnail."),
+        .withMessage("Please provide the vehicle thumbnail.")
+        .custom(invModel.isImage())
+        .withMessage("Please provide a valid Image (ending in: .jpg, .jpeg, .png, or .webp"),
 
         body("inv_price")
         .trim()

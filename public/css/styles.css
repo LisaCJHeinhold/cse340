@@ -175,6 +175,12 @@ button {
   width: 95%;
   margin: 10px auto;
 }
+input:required:invalid, input:focus:invalid {
+  background-color: rgb(255, 188, 188);
+}
+input:required:valid {
+  border: 2px solid rgb(51, 246, 51);
+}
 .warning {
   color: white;
   background-color: red;
@@ -272,6 +278,14 @@ button {
 /* ***************new inventory*********** */
 .form select {
   width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+  border: 2px solid var(--light-accent);
+  border-radius: 5px;
+}
+.form textarea {
+  width: 100%;
+  resize: none;
   margin: 5px 0;
   padding: 5px;
   border: 2px solid var(--light-accent);

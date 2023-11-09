@@ -82,5 +82,12 @@ async function AddInventory(inv_make, inv_model, inv_year, inv_description, inv_
   }
 }
 
-module.exports = { getClassifications, getInventoryByClassificationId, getInventoryItemDetail, AddClassification, checkExistingName, AddInventory }
+/* *****************************
+*   image validation
+* *************************** */
+function isImage(url) {
+  return /\.(jpg|jpeg|png|webp)$/.test(url);
+}
+
+module.exports = { getClassifications, getInventoryByClassificationId, getInventoryItemDetail, AddClassification, checkExistingName, AddInventory, isImage }
 
