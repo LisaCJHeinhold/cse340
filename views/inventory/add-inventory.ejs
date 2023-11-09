@@ -23,7 +23,7 @@
     <input type="number" name="inv_year" id="inv_year" placeholder="Ex: 1999" required value="<%= locals.inv_year %>">
 
     <label for="inv_description">Vehicle Description</label>
-    <textarea name="inv_description" id="inv_description" placeholder="fill" required value="<%= locals.inv_description %>"></textarea>
+    <textarea name="inv_description" id="inv_description" placeholder="Ex: The Hyundai Sonata is a midsize sedan known for its sleek design, advanced safety features, and a comfortable interior. Renowned for its reliable performance and fuel efficiency, the Sonata offers a well-rounded driving experience with modern technology and a spacious cabin." required value="<%= locals.inv_description %>"></textarea>
 
     <label for="inv_image">Vehicle Image</label>
     <input type="text" name="inv_image" id="inv_image" value="/images/vehicles/no-image.png" pattern=".*\.(jpg|jpeg|png|webp)$" required value="<%= locals.inv_image %>">
@@ -41,8 +41,9 @@
     <input type="text" name="inv_color" id="inv_color" placeholder="Ex: Red" required value="<%= locals.inv_color %>">
 
     <label for="classification_id">Vehicle Classification</label>
-    <select  name="classification_id" id="classification_id">
-        <%- dropdown %>
-    </select>
+    <%- dropdown %>
+    <!-- <select  name="classification_id" id="classification_id">
+
+    </select> -->
     <button type="submit">Submit</button>
 </form>
