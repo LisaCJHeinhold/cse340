@@ -113,10 +113,12 @@ validate.newInventoryData = async (req, res, next) => {
     errors = validationResult(req)
     if (!errors.isEmpty()) {
       let nav = await utilities.getNav()
+      let dropdown = await utilities.getDropDown()
       res.render("inventory/add-inventory", {
         errors,
         title: "New Inventory",
         nav,
+        dropdown,
         inv_make, 
         inv_model, 
         inv_year, 
