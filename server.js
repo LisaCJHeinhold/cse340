@@ -14,10 +14,10 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities')
 const errorRoute = require('./routes/errorRoute');
-const managementRoute = require('./routes/managementRoute');
 const session = require("express-session");
 const pool = require('./database');
 const accountRoute = require("./routes/accountRoute")
+const managementRoute = require('./routes/managementRoute');
 const bodyParser = require("body-parser")
 
 /* ***********************
@@ -61,6 +61,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 app.use("/error", errorRoute)
 app.use("/account", accountRoute)
+app.use("/inv", managementRoute)
 
 app.use(async (req, res, next) => {
   next ({status: 404, message: 'Sorry, we appear to have lost that page.'})
