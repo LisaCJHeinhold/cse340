@@ -36,8 +36,8 @@ async function AddClassification(req, res) {
             "notice",
             `You added a new Classification!`
         )
-        res.status(201).render("inventory/add-classification", {
-            title: "New Classification",
+        res.status(201).render("inventory/management", {
+            title: "Management",
             nav,
             errors: null,
         })
@@ -89,10 +89,9 @@ async function AddInventory(req, res) {
             "notice",
             `You added a new Inventory Item!`
         )
-        res.status(201).render("inventory/add-inventory", {
-            title: "New Inventory",
+        res.status(201).render("inventory/management", {
+            title: "Management",
             nav,
-            dropdown,
             errors: null,
         })
     } else {
