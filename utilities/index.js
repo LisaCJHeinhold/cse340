@@ -26,6 +26,21 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
+/* **************************************
+* classification dropdown
+* ************************************ */
+
+// Util.getDropDown = async function (optionSelected) {
+//   let data = await invModel.getClassifications();
+//   let dropdown = '<select name="classification_id" id="classification_id" required>'
+//   dropdown += "<option value=''>Choose a Classification</option>"
+//   data.rows.forEach((row) => {
+//     dropdown += `<option value="${row.classification_id}" ${row.classification_id === Number(optionSelected) ? "selected" : ""}>${row.classification_name}</option>`;
+//   });
+//   dropdown += "</select>";
+//   return dropdown;
+// }
+
 Util.getDropDown = async function (classification_id = null) {
   let data = await invModel.getClassifications()
   let dropdown = '<select name="classification_id" id="classification_id">'
