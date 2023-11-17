@@ -6,12 +6,15 @@ const managementModel = require("../models/inventory-model")
 * *************************************** */
 async function buildManagement(req, res, next) {
     let nav = await utilities.getNav()
+    const ClassificationSelect = await utilities.getDropDown()
     res.render("inventory/management", {
         title: "Management",
         nav,
+        ClassificationSelect,
         errors: null,
     })
 }
+
 /* ****************************************
 *  Deliver add classification view
 * *************************************** */
@@ -104,5 +107,6 @@ async function AddInventory(req, res) {
         })
       }
 }
+
 
 module.exports = { buildManagement, buildAddClassification, AddClassification, buildAddInventory, AddInventory }

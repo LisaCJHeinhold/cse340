@@ -293,6 +293,34 @@ input:required:valid {
   border-radius: 5px;
 }
 /* ***************end new inventory*********** */
+/* ********manage inv select and table********** */
+.manage-inv select {
+  /* width: 50%; */
+  margin: 5px 10px;
+  padding: 5px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+}
+#inventoryDisplay {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  margin: 10px;
+}
+#inventoryDisplay thead tr th {
+  padding: 10px;
+}
+#inventoryDisplay tbody tr, #inventoryDisplay tbody tr td {
+  border: 1px solid grey;
+  padding: 8px;
+}
+#inventoryDisplay tbody tr:nth-child(even){
+  background-color: lightgrey;
+}
+#inventoryDisplay tbody tr td a {
+  color: var(--accent);
+}
+
+/* ********end mange inv select and table********* */
 /* ************end management************ */
 
 footer {
