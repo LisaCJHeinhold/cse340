@@ -23,7 +23,9 @@ validate.newClassificationRules = () => {
     ]
 }
 
-
+/*  **********************************
+ *  check classification data
+ * ********************************* */
 validate.newClassificationData = async (req, res, next) => {
   const { classification_name } = req.body
   let errors = []
@@ -107,6 +109,9 @@ validate.newInventoryRules = () => {
     ]
 }
 
+/*  **********************************
+ *  check inventory data
+ * ********************************* */
 validate.newInventoryData = async (req, res, next) => {
     const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id } = req.body
     let errors = []
@@ -133,6 +138,39 @@ validate.newInventoryData = async (req, res, next) => {
       return
     }
     next()
+}
+
+/*  **********************************
+ *  check update inventory data
+ * ********************************* */
+validate.checkUpdateData = async (req, res, next) => {
+  const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id } = req.body
+  let errors = []
+  errors = validationResult(req)
+  if (!errors.isEmpty()) {
+    // const inv_id = parseInt(req.params.inv_id)
+    let nav = await utilities.getNav()
+    let dropdown = await utilities.getDropDown()
+    res.render("inventory/add-inventory", {
+      errors,
+      title: "New Inventory",
+      nav,
+      dropdown,
+      inv_make, 
+      inv_model, 
+      inv_year, 
+      inv_description, 
+      inv_image, 
+      inv_thumbnail, 
+      inv_price, 
+      inv_miles, 
+      inv_color, 
+      classification_id,
+      inv_id,
+    })
+    return
+  }
+  next()
 }
 
 module.exports = validate
