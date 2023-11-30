@@ -154,6 +154,43 @@ Util.checkJWTToken = (req, res, next) => {
 }
 
 /* ****************************************
+* Middleware to check if account type is valid
+**************************************** */
+Util.checkAccountAccess = (req, res, next) => {
+  if (req.cookies.jwt) {
+    jwt.verify(
+      req.cookies.jwt,
+      process.env.ACCESS_TOKEN_SECRET,
+      function (err, accountData) {
+        if (err) {
+          req.flash("Please log in")
+          res.clearCookie("jwt")
+          return res.redirect("/account/login")
+        }
+        if (accountData.account_type === "Admin" || accountData.account_type === "Employee") {
+          res.locals.accountData = accountData;
+          res.locals.loggedin = 1;
+          next();
+        } else {
+          req.flash("Please log in as an Admin or Employee to access this page.");
+          res.clearCookie("jwt");
+          return res.redirect("/account/login");
+        }
+        
+        res.locals.accountData = accountData
+        res.locals.loggedin = 1
+        next()
+      }
+    );
+  } else {
+    req.flash("Please log in.")
+    return res.redirect("/account/login");
+  }
+};
+
+
+
+/* ****************************************
  *  Check Login
  * ************************************ */
 Util.checkLogin = (req, res, next) => {
