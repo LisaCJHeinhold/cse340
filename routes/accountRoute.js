@@ -6,7 +6,10 @@ const regValidate = require('../utilities/account-validation')
 
 router.get("/login", utilities.handleErrors(accountController.buildLogin));
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
-router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement))
+router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement));
+router.get("/manageInfo/:account_id", utilities.checkLogin, utilities.handleErrors(accountController.buildManageAccountInfo));
+router.get("/logout", utilities.handleErrors(accountController.logout));
+
 
 router.post(
     "/register",
@@ -22,5 +25,17 @@ router.post(
     regValidate.checkLogData,
     utilities.handleErrors(accountController.accountLogin)
 )
+
+router.post(
+    "/update", 
+    regValidate.updateRules(),
+    regValidate.checkUpdateAccountData,
+    utilities.handleErrors(accountController.updateAccount));
+
+router.post(
+    "/updatepassword", 
+    regValidate.updatePasswordRules(),
+    regValidate.checkUpdatePasswordData,
+    utilities.handleErrors(accountController.updatePassword));
 
 module.exports = router;

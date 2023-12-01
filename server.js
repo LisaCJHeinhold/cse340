@@ -63,7 +63,7 @@ app.use(static)
 //Index Route
 app.get("/", utilities.handleErrors(baseController.buildHome))
 //Inventory routes
-app.use("/inv", inventoryRoute)
+app.use("/inventory", inventoryRoute)
 app.use("/error", errorRoute)
 app.use("/account", accountRoute)
 app.use("/inv", managementRoute)

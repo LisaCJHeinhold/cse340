@@ -151,9 +151,9 @@ validate.checkUpdateData = async (req, res, next) => {
     // const inv_id = parseInt(req.params.inv_id)
     let nav = await utilities.getNav()
     let dropdown = await utilities.getDropDown()
-    res.render("inventory/add-inventory", {
+    res.render("inventory/edit-inventory", {
       errors,
-      title: "New Inventory",
+      title: "Edit Inventory",
       nav,
       dropdown,
       inv_make, 
